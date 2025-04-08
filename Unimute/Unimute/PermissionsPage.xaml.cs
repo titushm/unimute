@@ -145,5 +145,10 @@ namespace Unimute {
 			};
 			return setup;
 		}
+
+		private void Page_Loaded(object sender, RoutedEventArgs e)
+		{
+			AppHelper.ResizeWidget(Width, Height, AppHelper.MainWidget);
+		}
 	}
 }

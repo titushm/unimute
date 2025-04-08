@@ -3,6 +3,8 @@ using Windows.UI.Xaml.Controls;
 using Microsoft.Gaming.XboxGameBar;
 using Windows.UI.Xaml.Input;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Navigation;
+using System;
 
 namespace Unimute {
 
@@ -11,8 +13,26 @@ namespace Unimute {
 			InitializeComponent();
 		}
 
+		protected override void OnNavigatedTo(NavigationEventArgs e)
+		{
+			AppHelper.MainWidget.RequestedOpacityChanged += Widget_RequestedOpacityChanged;
+		}
+		private async void Widget_RequestedOpacityChanged(XboxGameBarWidget sender, object args)
+		{
+			await MuteButton.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+			{
+				Opacity = AppHelper.MainWidget.RequestedOpacity;
+			});
+		}
+
 		private async void Page_Loaded(object sender, RoutedEventArgs e) {
 			AppHelper.ResizeWidget(Width, Height, AppHelper.MainWidget);
+			await MuteButton.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+			{
+				Opacity = AppHelper.MainWidget.RequestedOpacity;
+			});
+			bool volumeBarHidden = AppHelper.GetSetting("HideVolumeBar", () => false);
+			if (volumeBarHidden) AppHelper.ResizeWidget(Height, Height, AppHelper.MainWidget);
 			AppHelper.MainWidget.RequestedThemeChanged += OnThemeChanged;
 			bool isMuted = AppHelper.GetSetting("IsMuted", () => false);
 			bool isDefault = !AppHelper.GetSetting("InputMode", () => false);

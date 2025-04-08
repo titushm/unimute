@@ -35,7 +35,8 @@ namespace Unimute {
 							rootFrame);
 						rootFrame.Navigate(typeof(MainPage), AppHelper.MainWidget);
 						AppHelper.MainWidget.SettingsClicked += OnSettingsClicked;
-					}
+
+                    }
 					else if (widgetArgs.AppExtensionId == "titushm-unimute-settings") {
 						AppHelper.SettingsWidget = new XboxGameBarWidget(
 							widgetArgs,

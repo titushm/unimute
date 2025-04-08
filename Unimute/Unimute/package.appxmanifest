@@ -12,7 +12,7 @@
 	<Identity
 			Name="TitusHM.Unimute"
 			Publisher="CN=F00AB374-C6D5-4527-B6D5-B6EF0179B1C4"
-			Version="1.0.0.0"
+			Version="1.1.0.0"
 			ProcessorArchitecture="x64" />
 	<mp:PhoneIdentity
   PhoneProductId="efdfb1c6-c2f4-439b-b1f9-fe10dc4f8dbc"
@@ -73,7 +73,7 @@
 							<GameBarWidget Type="Settings">
 								<Window>
 									<Size>
-										<Height>180</Height>
+										<Height>300</Height>
 										<Width>321</Width>
 									</Size>
 									<ResizeSupported>

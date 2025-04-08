@@ -7,7 +7,7 @@
 	mc:Ignorable="d"
 	Height="70"
 	Width="320"
-	Opacity="{ThemeResource Widget:Opacity}"
+	Loaded="Page_Loaded"
 	Background="{ThemeResource Window.Primary.Background}">
 
 	<RelativePanel VerticalAlignment="Center" Margin="5">

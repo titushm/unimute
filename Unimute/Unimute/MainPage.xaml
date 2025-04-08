@@ -9,11 +9,10 @@
 	mc:Ignorable="d"
 	Background="{ThemeResource Window.Primary.Background}"
 	Foreground="{ThemeResource Text.Foreground}"
-	Opacity="{ThemeResource Widget:Opacity}"
 	Loaded="Page_Loaded">
 	
 	<StackPanel VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
-		<Button Style="{ThemeResource Widget:Round:Button}" Width="50" Height="50"  Click="MuteButton_Click" Name="MuteButton">
+		<Button Style="{ThemeResource Widget:Round:Button}" Width="50" Height="50" Click="MuteButton_Click" Name="MuteButton">
 			<ToolTipService.ToolTip>
 				<ToolTip Content="Muted"/>
 			</ToolTipService.ToolTip>

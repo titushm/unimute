@@ -21,12 +21,20 @@ namespace Unimute {
 		private void PopulateConfig() {
 			bool inputMode = AppHelper.GetSetting("InputMode", () => false);
 			InputToggleSwitch.IsOn = inputMode;
+			bool showVolumeBar = AppHelper.GetSetting("HideVolumeBar", () => false);
+			VolumeBarSwitch.IsOn = showVolumeBar;
 			VersionTextBox.Text = AppHelper.Version.ToString();
 		}
 
 		private void InputToggleSwitch_Toggled(object sender, RoutedEventArgs e) {
 			AppHelper.SetSetting("InputMode", InputToggleSwitch.IsOn);
 		}
+
+		private void VolumeBarSwitch_Toggled(object sender, RoutedEventArgs e)
+		{
+			AppHelper.SetSetting("HideVolumeBar", VolumeBarSwitch.IsOn);
+		}
+
 
 		private void LinkButton_Click(object sender, RoutedEventArgs e) {
 			if (sender is Button button) AppHelper.MainWidget.LaunchUriAsync(new Uri(button.Tag.ToString()));
