@@ -1,0 +1,46 @@
+<Page
+	x:Class="Unimute.SettingsPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	Height="220"
+	Width="430"
+	Opacity="{ThemeResource Widget:Opacity}"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	Foreground="{ThemeResource Text.Foreground}"
+	Background="{ThemeResource Window.Primary.Background}"
+	Loaded="Page_Loaded">
+
+	<!-- Header -->
+	<StackPanel Orientation="Vertical" Padding="15 10 15 15">
+		<TextBlock FontWeight="Thin" Margin="0 0 0 10" FontSize="25">General Settings</TextBlock>
+
+		<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Vertical" Margin="0 0 20 10">
+				<TextBlock FontSize="15" VerticalAlignment="Center" FontWeight="SemiBold">Input Device</TextBlock>
+				<TextBlock FontSize="14" VerticalAlignment="Center">Choose the input device to be controlled</TextBlock>
+			</StackPanel>
+			<ToggleSwitch Style="{ThemeResource Widget:ToggleSwitch}" OnContent="All" OffContent="Default" Name="InputToggleSwitch" VerticalAlignment="Center" Toggled="InputToggleSwitch_Toggled" Width="131"/>
+		</StackPanel>
+
+		<StackPanel BorderThickness="0 1 0 0" BorderBrush="{ThemeResource Text.Secondary.Foreground}" Margin="0 5 0 0">
+			<TextBlock  Margin="0 0 0 10" FontWeight="Thin" FontSize="25">About</TextBlock>
+		</StackPanel>
+		
+		<StackPanel Orientation="Vertical">
+			<StackPanel Orientation="Horizontal">
+				<TextBlock FontSize="15" VerticalAlignment="Center" FontWeight="SemiBold" Margin="0 0 10 0">Version</TextBlock>
+				<TextBlock FontSize="14" VerticalAlignment="Center" Foreground="{ThemeResource Text.Secondary.Foreground}" Name="VersionTextBox"/>
+			</StackPanel>
+			<RelativePanel Margin="0 10 0 0">
+				<StackPanel Orientation="Horizontal">
+					<Button Style="{ThemeResource Widget:Round:Button}" Background="Transparent" CornerRadius="5" Padding="2" Margin="0 0 10 0" Click="LinkButton_Click" Tag="https://github.com/titushm/unimute">View On Github</Button>
+					<Button Style="{ThemeResource Widget:Round:Button}" Background="Transparent" CornerRadius="5" Padding="2" Margin="0 0 10 0" Click="LinkButton_Click" Tag="https://www.svgrepo.com/collection/software-mansion-line-icons/">Software Mansion Line Icons</Button>
+					<Button Style="{ThemeResource Widget:Round:Button}" Background="Transparent" CornerRadius="5" Padding="2" Click="LinkButton_Click" Tag="ms-settings:sound">Default Input</Button>
+
+				</StackPanel>
+			</RelativePanel>
+		</StackPanel>
+	</StackPanel>
+</Page>

@@ -1,0 +1,27 @@
+<Page
+	x:Class="Unimute.MainPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	Height="70"
+	Width="320"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	Background="{ThemeResource Window.Primary.Background}"
+	Foreground="{ThemeResource Text.Foreground}"
+	Opacity="{ThemeResource Widget:Opacity}"
+	Loaded="Page_Loaded">
+	
+	<StackPanel VerticalAlignment="Center" Margin="10 0 0 0" Orientation="Horizontal">
+		<Button Style="{ThemeResource Widget:Round:Button}" Width="50" Height="50"  Click="MuteButton_Click" Name="MuteButton">
+			<ToolTipService.ToolTip>
+				<ToolTip Content="Muted"/>
+			</ToolTipService.ToolTip>
+			<ContentControl Name="MuteButtonIcon" Template="{ThemeResource MuteIcon}" Height="25" Width="25"/>
+		</Button>
+		<StackPanel Orientation="Vertical" Margin="15 0 0 0">
+			<TextBlock HorizontalAlignment="Center" FontSize="17" Foreground="{ThemeResource Text.Secondary.Foreground}">VOLUME</TextBlock>
+			<Slider Name="VolumeSlider" Minimum="0" Maximum="100" Value="100" Width="225" PointerCaptureLost="VolumeSlider_PointerCaptureLost"/>
+		</StackPanel>
+	</StackPanel>
+</Page>

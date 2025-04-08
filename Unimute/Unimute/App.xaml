@@ -1,0 +1,17 @@
+﻿<Application
+	x:Class="Unimute.App"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="ms-appx:///Themes/DarkTheme.xaml"/>
+				<ResourceDictionary Source="ms-appx:///Themes/Styles.xaml"/>
+				<ResourceDictionary Source="ms-appx:///Icons.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+
+			<x:Double x:Key="Widget:Opacity">1</x:Double>
+		</ResourceDictionary>
+	</Application.Resources>
+	
+</Application>
