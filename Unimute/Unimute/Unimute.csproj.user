@@ -11,8 +11,11 @@
     <AppxShowAllApps>False</AppxShowAllApps>
     <AppxBuildConfigurationSelection>x86|x64</AppxBuildConfigurationSelection>
     <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
+<<<<<<< HEAD
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DoNotLaunchApp>true</DoNotLaunchApp>
+=======
+>>>>>>> 35278412ab2dd177c88d4b2447828bb902732ab3
   </PropertyGroup>
 </Project>
